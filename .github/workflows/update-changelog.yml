@@ -1,0 +1,21 @@
+name: Update Changelog
+
+on:
+  pull_request:
+    types: [opened, synchronize, edited]
+    path:
+      - "Bible/**"
+
+permissions:
+  contents: write # The workflow needs to write back to the branch
+
+jobs:
+  update-changelog:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Auto Changelog PR
+        uses: brustolin/auto-changelog-pr@v1
