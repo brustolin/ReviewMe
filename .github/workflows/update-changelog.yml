@@ -4,7 +4,7 @@ on:
   pull_request:
     types: [opened, synchronize, edited]
     path:
-      - "Bible/**"
+      - "Sources/**"
 
 permissions:
   contents: write # The workflow needs to write back to the branch
