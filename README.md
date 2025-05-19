@@ -61,8 +61,8 @@ ReviewMe.reviewIfNeeded(settings: settings, in: windowScene)
 
 ## ⚙️ Settings Explained
 
-|-|-|
 |Property|Description|
+|-|-|
 |minimumAppInteractions|How many times reviewIfNeeded must be called before a review is shown|
 |minimumDaysBetweenReviews|Minimum number of days between two review prompts|
 |allowPromptOnHotFix|Allows prompts on hotfix version changes (e.g., 1.0.0 → 1.0.1)|
