@@ -17,7 +17,7 @@
 Add this line to your `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/your-username/ReviewMe.git", from: "1.0.0")
+.package(url: "https://github.com/brustolin/ReviewMe.git", from: "1.0.0")
 ```
 
 Or use Xcode:
