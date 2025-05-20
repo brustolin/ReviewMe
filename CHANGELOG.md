@@ -2,7 +2,7 @@
 
 ## 1.1
 
-- Support for SwiftUI (<#PR>)
+- Support for SwiftUI (#2)
 
 ## 1.0
 
