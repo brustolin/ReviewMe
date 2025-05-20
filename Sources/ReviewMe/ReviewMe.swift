@@ -14,18 +14,14 @@ public struct ReviewMe {
         let now = Date()
         let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "0.0.0"
 
-        let lastReviewDate = userDefaults.object(forKey: ReviewStorageKey.lastReviewDate) as? Date
         let lastReviewVersion = userDefaults.string(forKey: ReviewStorageKey.lastReviewAppVersion)
-        var checkCount = userDefaults.integer(forKey: ReviewStorageKey.reviewCheckCount)
-
-        // Check if version changed
         let isNewVersion = shouldPromptForVersionChange(oldVersion: lastReviewVersion, newVersion: currentVersion, allowHotFix: settings.allowPromptOnHotFix)
 
-        if isNewVersion {
-            checkCount = 0
-            userDefaults.set(currentVersion, forKey: ReviewStorageKey.lastReviewAppVersion)
-        }
-
+        guard isNewVersion else { return }
+        
+        var checkCount = userDefaults.integer(forKey: ReviewStorageKey.reviewCheckCount)
+        let lastReviewDate = userDefaults.object(forKey: ReviewStorageKey.lastReviewDate) as? Date
+        
         // Increment the count
         checkCount += 1
         userDefaults.set(checkCount, forKey: ReviewStorageKey.reviewCheckCount)
