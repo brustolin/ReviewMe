@@ -5,7 +5,7 @@
 
 ### Fix
 
-- Not saving current version of the app (<#PR>)
+- Not saving current version of the app
 
 ## 1.0.0
 
