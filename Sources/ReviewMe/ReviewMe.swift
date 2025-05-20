@@ -23,6 +23,7 @@ public struct ReviewMe {
 
         if isNewVersion {
             checkCount = 0
+            userDefaults.set(currentVersion, forKey: ReviewStorageKey.lastReviewAppVersion)
         }
 
         // Increment the count
@@ -37,7 +38,6 @@ public struct ReviewMe {
             SKStoreReviewController.requestReview(in: scene)
             
             userDefaults.set(now, forKey: ReviewStorageKey.lastReviewDate)
-            userDefaults.set(currentVersion, forKey: ReviewStorageKey.lastReviewAppVersion)
             userDefaults.set(0, forKey: ReviewStorageKey.reviewCheckCount)
         }
     }
