@@ -1,6 +1,13 @@
 # CHANGELOG
 
-## 1.0
+
+## 1.0.1
+
+### Fix
+
+- Not saving current version of the app (<#PR>)
+
+## 1.0.0
 
 ### Features
 

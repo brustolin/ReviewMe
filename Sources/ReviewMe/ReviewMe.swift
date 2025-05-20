@@ -35,6 +35,7 @@ public struct ReviewMe {
             
             userDefaults.set(now, forKey: ReviewStorageKey.lastReviewDate)
             userDefaults.set(0, forKey: ReviewStorageKey.reviewCheckCount)
+            userDefaults.set(currentVersion, forKey: ReviewStorageKey.lastReviewAppVersion)
         }
     }
 
