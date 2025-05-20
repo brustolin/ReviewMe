@@ -35,15 +35,39 @@ import ReviewMe
 
 ### 2. Call reviewIfNeeded at an appropriate time
 
+
+**SwiftUI Integration** 
+
+If you’re using SwiftUI, simply attach the .requestReviewIfNeeded() view modifier to a top-level view (like your main screen). The modifier will automatically determine the correct UIWindowScene and decide whether to prompt for a review.
 A good place is when the app becomes active or after a significant user action:
 
 ```swift
+import SwiftUI
+import ReviewMe
+
+@main
+struct MyApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+                .requestReviewIfNeeded()
+        }
+    }
+}
+```
+
+**UIKit Integration**
+
+In UIKit apps, call the static method manually from anywhere you have access to a UIWindowScene — 
+usually during app launch in your scene delegate, or when a major action is completed:
+
+```swift
 import UIKit
-
-func sceneDidBecomeActive(_ scene: UIScene) {
-    guard let windowScene = scene as? UIWindowScene else { return }
-
-    ReviewMe.reviewIfNeeded(in: windowScene)
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    func sceneDidBecomeActive(_ scene: UIScene) {
+        guard let windowScene = scene as? UIWindowScene else { return }
+        ReviewMe.reviewIfNeeded(in: windowScene)
+    }
 }
 ```
 
