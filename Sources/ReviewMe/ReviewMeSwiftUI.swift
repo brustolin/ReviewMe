@@ -5,7 +5,7 @@ import StoreKit
 public struct ReviewIfNeededModifier: ViewModifier {
     let settings: ReviewMeSettings
 
-    @Environment(\.scenePhase) private var scenePhase
+// Removed unused `scenePhase` variable declaration.
     @State private var hasRunReviewCheck = false
     public func body(content: Content) -> some View {
         content
